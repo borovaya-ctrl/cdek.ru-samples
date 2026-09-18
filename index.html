@@ -47,12 +47,12 @@
       width: 100%;
     }
 
-    /* ================= DYNAMIC CUSTOM CURSOR (ТОЛЬКО ДЛЯ МЫШИ НА DESKTOP) ================= */
+    /* ================= DYNAMIC CUSTOM CURSOR (ТОЛЬКО ДЛЯ ПК) ================= */
     @media (hover: hover) and (pointer: fine) {
       body {
         cursor: none;
       }
-      a, button, input, select, textarea, label, .step-card, .tab-btn, .faq-question {
+      a, button, input, select, textarea, label, .step-card, .tab-btn, .faq-question, .case-card {
         cursor: none !important;
       }
       .cursor-lead-dot {
@@ -196,7 +196,6 @@
       color: var(--cdek-green);
     }
 
-    /* Мобильная кнопка быстрого звонка */
     .mobile-call-btn {
       display: none;
       align-items: center;
@@ -316,15 +315,15 @@
       transform: translateY(-3px);
     }
 
-    /* ================= СЕКЦИИ ================= */
+    /* ================= ПРОСТОРНЫЕ СЕКЦИИ ================= */
     section {
-      padding: 56px 0;
+      padding: 60px 0;
     }
 
     .section-header {
       text-align: center;
       max-width: 860px;
-      margin: 0 auto 32px;
+      margin: 0 auto 34px;
     }
 
     .section-title {
@@ -342,7 +341,7 @@
       line-height: 1.5;
     }
 
-    /* ================= COMPARISON TABLE (СВАЙП НА ТЕЛЕФОНАХ) ================= */
+    /* ================= COMPARISON TABLE ================= */
     .table-responsive-wrapper {
       position: relative;
       width: 100%;
@@ -368,13 +367,13 @@
 
     .comparison-table {
       width: 100%;
-      min-width: 600px; /* Защита от сплющивания колонок на мобильных */
+      min-width: 600px;
       border-collapse: collapse;
       text-align: left;
     }
 
     .comparison-table th, .comparison-table td {
-      padding: 16px 20px;
+      padding: 18px 22px;
       font-size: 14px;
       border-bottom: 1px solid var(--cdek-border);
     }
@@ -456,7 +455,7 @@
     .calc-card {
       background: #FFFFFF;
       border-radius: var(--radius-md);
-      padding: 28px 24px;
+      padding: 30px 26px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--cdek-border);
       display: grid;
@@ -526,7 +525,7 @@
       background: #F8FAFC;
       border: 1.5px dashed var(--cdek-border);
       border-radius: var(--radius-sm);
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -708,7 +707,7 @@
     .step-card {
       background: #FFFFFF;
       border-radius: var(--radius-md);
-      padding: 24px 20px;
+      padding: 26px 22px;
       border: 1.5px solid var(--cdek-border);
       position: relative;
       overflow: hidden;
@@ -791,9 +790,150 @@
       line-height: 1.45;
     }
 
+    /* ================= НОВЫЙ БЛОК: КЕЙСЫ И ОТЗЫВЫ ================= */
+    .cases-section {
+      background: var(--cdek-gray-bg);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .case-card {
+      background: #FFFFFF;
+      border: 1px solid var(--cdek-border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cdek-green);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .case-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .case-tag {
+      background: #F1F5F9;
+      color: #334155;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .case-route {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cdek-green);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .case-card h4 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--cdek-dark);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .case-metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: #F8FAFC;
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #EDF2F7;
+    }
+
+    .metric-col {
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--cdek-green);
+      display: block;
+    }
+
+    .metric-lbl {
+      font-size: 11px;
+      color: var(--cdek-text-muted);
+    }
+
+    .case-body {
+      font-size: 13.5px;
+      color: #4A5568;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .case-quote {
+      border-left: 2.5px solid var(--cdek-green);
+      padding-left: 12px;
+      font-style: italic;
+      font-size: 12.5px;
+      color: #64748B;
+      margin-bottom: 16px;
+    }
+
+    .case-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--cdek-border);
+      padding-top: 14px;
+    }
+
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--cdek-green-light);
+      color: var(--cdek-green);
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .author-meta h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cdek-dark);
+    }
+
+    .author-meta span {
+      font-size: 11px;
+      color: var(--cdek-text-muted);
+      display: block;
+    }
+
     /* ================= FAQ SECTION ================= */
     .faq-section {
-      background: var(--cdek-gray-bg);
+      background: #FFFFFF;
     }
 
     .faq-wrapper {
@@ -966,8 +1106,6 @@
     }
 
     /* ================= ПОЛНАЯ АДАПТАЦИЯ (MEDIA QUERIES) ================= */
-
-    /* 1. Ноутбуки и небольшие мониторы (1025px – 1200px) */
     @media (max-width: 1180px) {
       .calc-layout-grid {
         grid-template-columns: 1fr;
@@ -983,9 +1121,11 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
       }
+      .cases-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    /* 2. Планшеты (769px – 1024px) */
     @media (max-width: 992px) {
       .hero-grid, .tab-content.active, .lead-grid {
         grid-template-columns: 1fr;
@@ -1011,7 +1151,6 @@
       }
     }
 
-    /* 3. Горизонтальные смартфоны и мини-планшеты (641px – 768px) */
     @media (max-width: 768px) {
       section {
         padding: 44px 0;
@@ -1023,9 +1162,11 @@
       .table-swipe-hint {
         display: block;
       }
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* 4. Смартфоны (до 640px) */
     @media (max-width: 640px) {
       .container {
         padding: 0 16px;
@@ -1034,63 +1175,51 @@
         height: 62px;
       }
       .header-phone {
-        display: none; /* Скрываем текстовый телефон */
+        display: none;
       }
       .mobile-call-btn {
-        display: flex; /* Показываем кликабельную круглую трубку для звонка */
+        display: flex;
       }
-
       .btn-cta-hero {
         width: 100%;
         padding: 15px 20px;
       }
-
       .form-row {
         grid-template-columns: 1fr;
       }
-
       .dim-inputs {
-        grid-template-columns: repeat(3, 1fr); /* Габариты остаются в одну строку */
+        grid-template-columns: repeat(3, 1fr);
       }
-
       .tab-btn {
         width: 100%;
         text-align: center;
         font-size: 13.5px;
         padding: 10px 16px;
       }
-
       .tabs-nav {
         flex-direction: column;
       }
-
       .tab-content {
         padding: 20px 16px;
       }
-
       .categories-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на смартфонах вместо бесконечного 1-колоночного скролла */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
-
       .category-card {
         padding: 16px 10px;
       }
-
       .stop-list-banner {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
       }
-
       .steps-grid {
         grid-template-columns: 1fr;
       }
-
       .lead-form-box {
         padding: 22px 16px;
       }
-
       .footer-flex {
         flex-direction: column;
         gap: 8px;
@@ -1126,7 +1255,6 @@
         </div>
         <a href="#order-form" class="btn-outline">Личный кабинет B2B</a>
 
-        <!-- Мобильная кнопка вызова -->
         <a href="tel:88002500405" class="mobile-call-btn" title="Позвонить в СДЭК">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         </a>
@@ -1179,7 +1307,7 @@
     </div>
   </section>
 
-  <!-- ================= COMPARISON TABLE (С ПОДДЕРЖКОЙ СВАЙПА) ================= -->
+  <!-- ================= COMPARISON TABLE ================= -->
   <section>
     <div class="container">
       <div class="section-header">
@@ -1503,6 +1631,144 @@
     </div>
   </section>
 
+  <!-- ================= НОВЫЙ БЛОК: РЕАЛИЗОВАННЫЕ КЕЙСЫ И ОТЗЫВЫ ================= -->
+  <section class="cases-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Реализованные кейсы и опыт клиентов</h2>
+        <p class="section-desc">Как компании решают задачи сертификации и тестирования продукции с помощью белой логистики СДЭК</p>
+      </div>
+
+      <div class="cases-grid">
+        <!-- КЕЙС 1 -->
+        <div class="case-card">
+          <div>
+            <div class="case-badge-row">
+              <span class="case-tag">Косметика и парфюмерия</span>
+              <span class="case-route">Гуанчжоу → Москва ✈️</span>
+            </div>
+            <h4>Ввоз 5 линеек сывороток для испытаний по ТР ТС 009/2011</h4>
+            
+            <div class="case-metrics-bar">
+              <div class="metric-col">
+                <span class="metric-val">6 дней</span>
+                <span class="metric-lbl">Срок двери-двери</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">4.5 кг</span>
+                <span class="metric-lbl">Вес образцов</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">ДТ принята ИЛ</span>
+              </div>
+            </div>
+
+            <p class="case-body">
+              <strong>Задача:</strong> Срочно доставить пробы косметики в аккредитованную лабораторию до запуска промышленной партии. Карго не подходило из-за невозможности получить официальную таможенную декларацию.
+            </p>
+
+            <div class="case-quote">
+              «СДЭК подготовил корректную проформу-инвойс и передал флаконы лично в руки эксперту лаборатории. Номер ГТД внесли в реестр Росаккредитации без единого замечания».
+            </div>
+          </div>
+
+          <div class="case-author">
+            <div class="author-avatar">АВ</div>
+            <div class="author-meta">
+              <h5>Алексей Васильев</h5>
+              <span>Директор по закупкам, ООО «Бьюти Лаб»</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- КЕЙС 2 -->
+        <div class="case-card">
+          <div>
+            <div class="case-badge-row">
+              <span class="case-tag">Промышленное оборудование</span>
+              <span class="case-route">Стамбул → Санкт-Петербург ✈️</span>
+            </div>
+            <h4>Доставка тестовых гидроклапанов для завода</h4>
+            
+            <div class="case-metrics-bar">
+              <div class="metric-col">
+                <span class="metric-val">5 дней</span>
+                <span class="metric-lbl">Авиадоставка</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">12.8 кг</span>
+                <span class="metric-lbl">Вес партии</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">0 ₽</span>
+                <span class="metric-lbl">Скрытых доплат</span>
+              </div>
+            </div>
+
+            <p class="case-body">
+              <strong>Задача:</strong> Крупные перевозчики отказывались брать мелкую партию образцов (2 узла), заставляя ждать сборный контейнер 35 дней. Простой станка обходился дороже перевозки.
+            </p>
+
+            <div class="case-quote">
+              «Забрали у поставщика в Стамбуле на следующий день после заявки. Инженеры провели испытания уже через 5 дней. Стоимость доставки образца зачли при заказе оптовой партии».
+            </div>
+          </div>
+
+          <div class="case-author">
+            <div class="author-avatar">ЕК</div>
+            <div class="author-meta">
+              <h5>Елена Ковалева</h5>
+              <span>Ведущий специалист ВЭД, Завод «Северная Механика»</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- КЕЙС 3 -->
+        <div class="case-card">
+          <div>
+            <div class="case-badge-row">
+              <span class="case-tag">Электроника и компоненты</span>
+              <span class="case-route">Шэньчжэнь → Екатеринбург ✈️</span>
+            </div>
+            <h4>Консолидация умных плат от 3 поставщиков</h4>
+            
+            <div class="case-metrics-bar">
+              <div class="metric-col">
+                <span class="metric-val">7 дней</span>
+                <span class="metric-lbl">Общий срок</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">-38%</span>
+                <span class="metric-lbl">Экономия сметы</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-val">ТР ТС 020</span>
+                <span class="metric-lbl">Сертификация</span>
+              </div>
+            </div>
+
+            <p class="case-body">
+              <strong>Задача:</strong> Сравнить качество сборки микроконтроллеров от трёх конкурирующих фабрик из Китая и подать документы на нотификацию ФСБ и подтверждение ЭМС.
+            </p>
+
+            <div class="case-quote">
+              «Хаб СДЭК в Шанхае объединил 3 разные посылки в одну, проверил упаковку и прислал детальный видеоотчет. Сэкономили больше трети бюджета на доставке пробников».
+            </div>
+          </div>
+
+          <div class="case-author">
+            <div class="author-avatar">ДМ</div>
+            <div class="author-meta">
+              <h5>Дмитрий Морозов</h5>
+              <span>Технический директор, ООО «Смарт Драйв»</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FAQ SECTION ================= -->
   <section class="faq-section">
     <div class="container">
@@ -1762,7 +2028,7 @@
       }
       requestAnimationFrame(renderCursor);
 
-      const interactives = 'a, button, input, select, textarea, .step-card, .tab-btn, .faq-question';
+      const interactives = 'a, button, input, select, textarea, .step-card, .tab-btn, .faq-question, .case-card';
       document.querySelectorAll(interactives).forEach((el) => {
         el.addEventListener('mouseenter', () => cursorDot.classList.add('active-hover'));
         el.addEventListener('mouseleave', () => cursorDot.classList.remove('active-hover'));
